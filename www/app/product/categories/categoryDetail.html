@@ -1,12 +1,15 @@
 <ion-view>
   <ion-nav-title>{{currentCategory.name}}</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <a href="#/categoryUpdate/{{currentCategory.$id}}" class="button button-icon ion-edit"></a>
+  </ion-nav-buttons>
   <ion-content class="padding has-header">
     <h4 class="center-text">
       {{currentCategory.description}}
     </h4>
 
     <div class="item item-divider item-icon-right margin-top-medium">
-      <a class="icon ion-plus positive" href="#/productCreate/{{currentCategory.$id}}/{{currentCategory.name}}"></a>
+      <a class="icon ion-plus positive" href="#/productCreate/{{currentCategory.$id}}"></a>
       Products
     </div>
 

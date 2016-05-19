@@ -103,8 +103,21 @@
               }
             })
 
+            .state('categoryUpdate', {
+              url: '/categoryUpdate/:cId',
+              templateUrl: 'app/product/categories/categoryUpdate.html',
+              controller: 'CategoryUpdateCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
             .state('productCreate', {
-              url: '/productCreate/:cId/:categoryName',
+              url: '/productCreate/:cId',
               templateUrl: 'app/product/products/productCreate.html',
               controller: 'ProductCreateCtrl',
               resolve: {

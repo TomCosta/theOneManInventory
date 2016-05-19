@@ -34,7 +34,7 @@
                                .child(categoryId)).$remove();
       },
 
-      productCreate: function(userId, name, description, price, units, categoryId, categoryName){
+      productCreate: function(userId, name, description, price, units, categoryId){
         var productList = $firebaseArray($firebaseRef.default.child("soloPreneur").child(userId)
                                           .child("productList"));
 
@@ -44,7 +44,6 @@
           price: price,
           units: units,
           categoryId: categoryId,
-          categoryName: categoryName,
         }).then(function(){
           $ionicHistory.goBack();
         });

@@ -11,13 +11,12 @@
     $scope.data = {};
     $scope.data.description = null;
     var categoryId = $state.params.cId;
-    var categoryName = $state.params.categoryName;
 
 
     $scope.productCreate = function(productCreateForm){
       if (productCreateForm.$valid) {
         ProductService.productCreate(user.$id, $scope.data.name, $scope.data.description,
-          $scope.data.price, $scope.data.units, categoryId, categoryName);
+          $scope.data.price, $scope.data.units, categoryId);
       };
     };
 

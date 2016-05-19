@@ -1,0 +1,38 @@
+<ion-view>
+  <ion-nav-title>Update {{currentCategory.name}}</ion-nav-title>
+  <ion-content class="padding has-header">
+
+    <form name="categoryUpdateForm" novalidate=""
+      ng-submit="categoryUpdate(categoryUpdateForm)" class="list card no-margin">
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : categoryUpdateForm.name.$invalid && categoryUpdateForm.$submitted,
+        'no-errors' : categoryUpdateForm.name.$valid && categoryUpdateForm.$submitted}">
+        <ion-label >Name <span class="required-mark">*</span></ion-label>
+        <input type="text" name="name" placeholder="What's the name of this category?"
+          ng-model="currentCategory.name" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="categoryUpdateForm.name.$error && categoryUpdateForm.$submitted"
+        ng-messages="categoryUpdateForm.name.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+      </div>
+
+      <ion-input class="item item-input item-stacked-label" >
+        <ion-label >Description</ion-label>
+        <textarea name="description" placeholder="What's the name of this category?"
+          ng-model="currentCategory.description"></textarea>
+      </ion-input>
+
+      <ion-input class="item-input padding">
+        <input type="submit" class="button button-positive" value="Update Category"
+          ng-disabled="categoryUpdateForm.$invalid && categoryUpdateForm.$submitted">
+      </ion-input>
+
+    </form>
+
+  </ion-content>
+</ion-view>
