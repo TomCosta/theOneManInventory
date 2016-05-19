@@ -1,0 +1,106 @@
+/* Empty. Add your own CSS if you like */
+.center-text {
+	text-align: center;
+}
+
+.right-text {
+	text-align: right;
+}
+
+.left-text {
+	text-align: left;
+}
+
+.finishedEvent {
+	color: white;
+	background-color: gray;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+.margin {
+	margin: 5px !important;
+}
+
+.margin-right {
+	margin-right: 5px !important;
+}
+
+.margin-left {
+	margin-left: 5px !important;
+}
+
+.margin-top {
+  margin-top: 5px !important;
+}
+
+.margin-bottom {
+  margin-bottom: 5px !important;
+}
+
+.padding-right {
+  padding-right: 5px !important;
+}
+
+.padding-left {
+  padding-left: 5px !important;
+}
+
+.padding-top {
+  padding-top: 5px !important;
+}
+
+.padding-bottom {
+  padding-bottom: 5px !important;
+}
+
+/*
+	Form validation CSS
+*/
+
+/** Styling for the username field **/
+label.item.has-error {
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+.error-container {
+  margin: 0;
+}
+
+.error {
+  padding: 8px 8px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+}
+
+.error i {
+  font-size: 24px;
+  color: #B83E2C;
+  vertical-align: middle;
+}
+
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+
+.has-errors {
+  border-bottom: 1px solid #B83E2C;
+}
+
+.no-errors {
+  border-bottom: 2px solid green;
+}

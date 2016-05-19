@@ -1,0 +1,58 @@
+<ion-view view-title="Login" hide-back-button="true">
+	<ion-content class="has-header padding">
+		<img ng-src="http://placehold.it/300x150" class="full-image">
+
+		<form name="loginForm" novalidate="" ng-submit="loginEmail(loginForm)"
+			class="list card no-margin">
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : loginForm.email.$invalid && loginForm.$submitted,
+				'no-errors' : loginForm.email.$valid && loginForm.$submitted}">
+				<ion-label >Email</ion-label>
+				<input type="email" name="email" placeholder="Your email..." ng-model="data.email" required>
+			</ion-input>
+
+			<div class="error-container" ng-show="loginForm.email.$error && loginForm.$submitted"
+				ng-messages="loginForm.email.$error">
+	      <div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required
+		    </div>
+	      <div class="error" ng-show="loginForm.email.$invalid && !loginForm.email.$pristine">
+		      <i class="ion-information-circled"></i>
+		      This needs to be a valid email.
+		    </div>
+	    </div>
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : loginForm.password.$invalid && loginForm.$submitted,
+				'no-errors' : loginForm.password.$valid && loginForm.$submitted}">
+				<ion-label >Password</ion-label>
+				<input type="password" name="password" placeholder="Your Password" ng-model="data.password" required>
+			</ion-input>
+
+			<div class="error-container last-error-container" ng-messages="loginForm.password.$error"
+				ng-show="loginForm.password.$error && loginForm.$submitted" >
+				<div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required
+		    </div>
+			</div>
+
+			<ion-input class="item-input padding">
+				<input type="submit" class="button button-positive" value="Login"
+					ng-disabled="loginForm.$invalid && loginForm.$submitted">
+			</ion-input>
+
+		</form>
+
+		<a href="#/signup" class="button button-royal button-clear button-block">
+			Or create an account
+		</a>
+
+		<a href="#/passwordResetForm" class="button button-royal button-clear button-block button-small">
+			I forgot my password :'(
+		</a>
+
+	</ion-content>
+</ion-view>

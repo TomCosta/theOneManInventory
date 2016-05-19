@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <!-- ngMessages -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- My JS Modules -->
+    <script src="app/app.module.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/routes.js"></script>
+    <script src="app/auth/auth.module.js"></script>
+
+    <!-- My JS Services -->
+    <script src="app/auth/authService.js"></script>
+
+    <!-- My JS Controllers -->
+    <script src="app/auth/signup/signupCtrl.js"></script>
+    <script src="app/auth/login/loginCtrl.js"></script>
+    <script src="app/auth/login/passwordResetCtrl.js"></script>
+    <script src="app/auth/profile/profileCtrl.js"></script>
+
+  </head>
+  <body ng-app="app">
+
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-clear"></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+
+  </body>
+</html>

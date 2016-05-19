@@ -1,0 +1,49 @@
+<ion-view view-title="Change your Email">
+	<ion-content class="has-header padding">
+
+		<form name="changeEmailForm" novalidate="" ng-submit="changeEmail(changeEmailForm)"
+      class="list card no-margin">
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : changeEmailForm.newEmail.$invalid && changeEmailForm.$submitted,
+        'no-errors' : changeEmailForm.newEmail.$valid && changeEmailForm.$submitted}">
+				<ion-label >New Email</ion-label>
+				<input type="email" name="newEmail" placeholder="Your new email"
+          ng-model="data.newEmail" required />
+			</ion-input>
+
+			<div class="error-container last-error-container"
+        ng-show="changeEmailForm.newEmail.$error && changeEmailForm.$submitted"
+				ng-messages="changeEmailForm.newEmail.$error">
+				<div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required
+		    </div>
+			</div>
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : changeEmailForm.password.$invalid && changeEmailForm.$submitted,
+          'no-errors' : changeEmailForm.password.$valid && changeEmailForm.$submitted}">
+				<ion-label >Your Password</ion-label>
+				<input type="password" name="password" placeholder="Your password"
+          ng-model="data.password" required />
+			</ion-input>
+
+			<div class="error-container last-error-container"
+        ng-show="changeEmailForm.password.$error && changeEmailForm.$submitted"
+				ng-messages="changeEmailForm.password.$error">
+				<div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required
+		    </div>
+			</div>
+
+			<ion-input class="item-input padding">
+				<input type="submit" class="button button-positive" value="Change Email"
+          ng-disabled="changeEmailForm.$invalid && changeEmailForm.$submitted">
+			</ion-input>
+
+		</form>
+
+	</ion-content>
+</ion-view>

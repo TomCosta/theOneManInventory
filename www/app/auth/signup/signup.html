@@ -1,0 +1,61 @@
+<ion-view view-title="Create an Account">
+	<ion-content class="padding has-header">
+		<form name="signupForm" novalidate="" ng-submit="createUser(signupForm)" class="list card no-margin">
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : signupForm.fullName.$invalid && signupForm.$submitted,
+				'no-errors' : signupForm.fullName.$valid && signupForm.$submitted}">
+				<ion-label >Name</ion-label>
+				<input type="text" name="fullName" placeholder="Your full name" ng-model="data.fullName" required>
+			</ion-input>
+
+			<div class="error-container" ng-show="signupForm.fullName.$error && signupForm.$submitted"
+				ng-messages="signupForm.fullName.$error">
+	      <div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required.
+		    </div>
+	    </div>
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : signupForm.email.$invalid && signupForm.$submitted,
+				'no-errors' : signupForm.email.$valid && signupForm.$submitted}">
+				<ion-label >Email</ion-label>
+				<input type="email" name="email" placeholder="Your email..." ng-model="data.email" required>
+			</ion-input>
+
+			<div class="error-container" ng-show="signupForm.email.$error && signupForm.$submitted"
+				ng-messages="signupForm.email.$error">
+	      <div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required!
+		    </div>
+	      <div class="error" ng-show="signupForm.email.$invalid && !signupForm.email.$pristine">
+		      <i class="ion-information-circled"></i>
+		      This needs to be a valid email address
+		    </div>
+	    </div>
+
+			<ion-input class="item item-input item-stacked-label"
+				ng-class="{ 'has-errors' : signupForm.password.$invalid && signupForm.$submitted, '
+				no-errors' : signupForm.password.$valid && signupForm.$submitted}">
+				<ion-label >Password</ion-label>
+				<input type="password" name="password" placeholder="Your password (Don't tell anyone!)"
+					ng-model="data.password" required>
+			</ion-input>
+
+			<div class="error-container" ng-show="signupForm.password.$error && signupForm.$submitted"
+				ng-messages="signupForm.password.$error">
+	      <div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      This field is required!
+		    </div>
+	    </div>
+
+			<ion-input class="item-input padding">
+				<input type="submit" class="button button-positive" value="Signup"
+					ng-disabled="signupForm.$invalid && signupForm.$submitted">
+			</ion-input>
+		</form>
+
+	</ion-content>
+</ion-view>
