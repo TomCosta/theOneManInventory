@@ -1,0 +1,17 @@
+<ion-view view-title="Product Categories">
+  <ion-nav-buttons side="secondary">
+    <a href="#/categoryCreate" class="button button-icon ion-plus-circled"></a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-header">
+    
+    <div class="card" ng-repeat="category in categoryList">
+      <div class="item item-divider center-text">
+        {{category.name}}
+      </div>
+      <div class="item item-text-wrap">
+        {{category.description}}
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -40,6 +40,7 @@
                 $firebaseRef.default.child("userProfile").child(authData.uid).set({
                 name: newFullName,
                 email: newEmail,
+                signupDate: Firebase.ServerValue.TIMESTAMP
               });
               $state.go('profile');
             });						

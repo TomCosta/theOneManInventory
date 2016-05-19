@@ -64,10 +64,36 @@
               }
 	        	})
 
+            .state('categoryCreate', {
+              url: '/categoryCreate',
+              templateUrl: 'app/product/categories/categoryCreate.html',
+              controller: 'CategoryCreateCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
+            .state('categoryList', {
+              url: '/categoryList',
+              templateUrl: 'app/product/categories/categoryList.html',
+              controller: 'CategoryListCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
 
 
 
             ;
-	        $urlRouterProvider.otherwise('profile');
+	        $urlRouterProvider.otherwise('categoryList');
     }]);
 })();

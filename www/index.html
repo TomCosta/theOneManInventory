@@ -21,7 +21,10 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <!-- ngMessages -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.js"></script>
-
+    <!-- AdMob Script -->
+    <script src="lib/admob.js"></script>
+    <!-- ngCordova for native plugins -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -30,15 +33,20 @@
     <script src="app/core/core.module.js"></script>
     <script src="app/core/routes.js"></script>
     <script src="app/auth/auth.module.js"></script>
+    <script src="app/product/product.module.js"></script>
 
     <!-- My JS Services -->
     <script src="app/auth/authService.js"></script>
+    <script src="app/product/productService.js"></script>
 
     <!-- My JS Controllers -->
     <script src="app/auth/signup/signupCtrl.js"></script>
     <script src="app/auth/login/loginCtrl.js"></script>
     <script src="app/auth/login/passwordResetCtrl.js"></script>
     <script src="app/auth/profile/profileCtrl.js"></script>
+    <script src="app/product/categories/categoryCreateCtrl.js"></script>
+    <script src="app/product/categories/categoryListCtrl.js"></script>
+    <script src="app/product/categories/categoryDetailCtrl.js"></script>
 
   </head>
   <body ng-app="app">

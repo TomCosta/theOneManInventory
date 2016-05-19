@@ -13,6 +13,7 @@
             This is the place for the features modules, like auth.
             */
             'app.auth',
+            'app.product',
 ]);
 
 })();

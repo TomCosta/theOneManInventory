@@ -4,6 +4,7 @@
   angular
     .module('app.core', [
             'ionic',
+            'ngCordova',
             'firebase',
             'ngMessages',
     ]);
