@@ -30,8 +30,10 @@
 	        		templateUrl: 'app/auth/profile/profile.html',
 	        		controller: 'ProfileCtrl',
 	        		resolve: {
-                user: function($firebaseAuthService) {
-                  return $firebaseAuthService.$requireAuth();
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
                 }
               }
 	        	})
@@ -41,8 +43,10 @@
 	        		templateUrl: 'app/auth/profile/changeEmail.html',
 	        		controller: 'ProfileCtrl',
 	        		resolve: {
-                user: function($firebaseAuthService) {
-                  return $firebaseAuthService.$requireAuth();
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
                 }
               }
 	        	})
@@ -52,8 +56,10 @@
 	        		templateUrl: 'app/auth/profile/changePassword.html',
 	        		controller: 'ProfileCtrl',
 	        		resolve: {
-                user: function($firebaseAuthService) {
-                  return $firebaseAuthService.$requireAuth();
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
                 }
               }
 	        	})

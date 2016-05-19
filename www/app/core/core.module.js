@@ -32,7 +32,7 @@
     	     	});
 			}])
       .config(function($firebaseRefProvider) {
-        $firebaseRefProvider.registerUrl('https://ionic-firebase-start.firebaseio.com/');
+        $firebaseRefProvider.registerUrl('https://solo-intentory.firebaseio.com/');
       });
 
 })();

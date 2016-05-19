@@ -10,8 +10,6 @@
 	function ProfileCtrl($scope, user, AuthService, $state){
 		// Creating an empty object called data and binding it to the $scope.
     $scope.data = {};
-		// Creating a userProfile object that will hold the userProfile.userId node
-    $scope.userProfile = AuthService.userProfileData(user.uid);
 
 		/**
 		 * This function will call our service and log the user out.
@@ -41,9 +39,10 @@
 		 */
     $scope.changeEmail = function(changeEmailForm){
       if (changeEmailForm.$valid) {
-        AuthService.changeEmail(user.password.email, $scope.data.newEmail, $scope.data.password);
-        $scope.userProfile.email = $scope.data.newEmail;
-        $scope.userProfile.$save();
+        AuthService.changeEmail(user.email, $scope.data.newEmail, $scope.data.password);
+        user.email = $scope.data.newEmail;
+        user.$save();          
+
       };
     };
 	};

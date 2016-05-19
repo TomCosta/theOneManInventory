@@ -46,10 +46,10 @@
 				}).catch(function(error){
 						switch (error.code) {
 				      case "EMAIL_TAKEN":
-				        alert("Bro, someone's using that email!");
+				        alert("Someone's using that email!");
 				        break;
 				      case "INVALID_EMAIL":
-				        alert("Dude, that is not an email address!");
+				        alert("That is not an email address!");
 				        break;
 				      default:
 				        alert("Error creating user:", error);
@@ -131,13 +131,6 @@
 					console.log(error);
 				});
 			},
-			/**
-			 * This will return the userProfile.userId node so we can update the email.
-			 */
-			userProfileData: function(userId){
-				var userProfileRef = $firebaseRef.default.child('userProfile').child(userId);
-				return $firebaseObject(userProfileRef);
-			}
 
 		}
 
