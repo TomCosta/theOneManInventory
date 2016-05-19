@@ -1,0 +1,32 @@
+<ion-view>
+  <ion-nav-title>{{currentCategory.name}}</ion-nav-title>
+  <ion-content class="padding has-header">
+    <h4 class="center-text">
+      {{currentCategory.description}}
+    </h4>
+
+    <div class="item item-divider item-icon-right margin-top-medium">
+      <a class="icon ion-plus positive" href="#/productCreate/{{currentCategory.$id}}/{{currentCategory.name}}"></a>
+      Products
+    </div>
+
+    <div class="list">
+      <a class="item" ng-repeat="product in productList"
+        href="#/productDetail/{{product.$id}}">
+        <h2>
+          {{product.name}}
+        </h2>
+        <p>
+          {{product.description}}
+        </p>
+        <p>
+          Price: <strong>{{product.price | currency}}</strong>
+        </p>
+        <p>
+          There are <strong>{{product.units}}</strong> available right now
+        </p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

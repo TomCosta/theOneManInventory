@@ -3,15 +3,15 @@
     <a href="#/categoryCreate" class="button button-icon ion-plus-circled"></a>
   </ion-nav-buttons>
   <ion-content class="padding has-header">
-    
-    <div class="card" ng-repeat="category in categoryList">
+
+    <ion-item class="card" ng-repeat="category in categoryList" href="#/categoryDetail/{{category.$id}}">
       <div class="item item-divider center-text">
         {{category.name}}
       </div>
       <div class="item item-text-wrap">
         {{category.description}}
       </div>
-    </div>
+    </ion-item>
 
   </ion-content>
 </ion-view>
