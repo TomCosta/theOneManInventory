@@ -4,6 +4,10 @@
   </ion-nav-buttons>
   <ion-content class="padding has-header">
 
+    <h4 class="text-center" ng-show="categoryList.length <= 0">
+      Create your first category here! <a href="#/categoryCreate" class="icon ion-plus-circled big-icon positive"></a>
+    </h4>
+
     <ion-item class="card" ng-repeat="category in categoryList" href="#/categoryDetail/{{category.$id}}">
       <div class="item item-divider center-text">
         {{category.name}}

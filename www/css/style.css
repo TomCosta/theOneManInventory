@@ -3,6 +3,10 @@ a {
 	text-decoration: none !important;
 }
 
+.big-icon {
+	font-size: 32px;
+}
+
 .center-text {
 	text-align: center;
 }

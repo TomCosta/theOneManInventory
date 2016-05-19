@@ -45,6 +45,25 @@
         </div>
       </div>
 
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productUpdateForm.units.$invalid && productUpdateForm.$submitted,
+        'no-errors' : productUpdateForm.units.$valid && productUpdateForm.$submitted}">
+        <ion-label >Units <span class="required-mark">*</span></ion-label>
+        <input type="number" name="units" placeholder="How many are there?" ng-model="currentProduct.units" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productUpdateForm.units.$error && productUpdateForm.$submitted"
+        ng-messages="productUpdateForm.units.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+        <div class="error" ng-show="placeCreateForm.peopleCapacity.$invalid && !placeCreateForm.peopleCapacity.$pristine">
+          <i class="ion-information-circled"></i>
+          This has to be a number.
+        </div>
+      </div>
+
       <ion-input class="item-input padding">
         <input type="submit" class="button button-positive" value="Create Product"
           ng-disabled="productUpdateForm.$invalid && productUpdateForm.$submitted">
