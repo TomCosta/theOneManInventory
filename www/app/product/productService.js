@@ -31,10 +31,41 @@
 
       categoryDelete: function(userId, categoryId){
         return $firebaseObject($firebaseRef.default.child("soloPreneur").child(userId).child("categoryList")
-                               .child(categoryId)).$remove();        
+                               .child(categoryId)).$remove();
       },
-      
+
+      productCreate: function(userId, name, description, price, units, categoryId, categoryName){
+        var productList = $firebaseArray($firebaseRef.default.child("soloPreneur").child(userId)
+                                          .child("productList"));
+
+        return productList.$add({
+          name: name,
+          description: description,
+          price: price,
+          units: units,
+          categoryId: categoryId,
+          categoryName: categoryName,
+        }).then(function(){
+          $ionicHistory.goBack();
+        });
+      },
+
+      productList: function(userId, categoryId){
+        return $firebaseArray($firebaseRef.default.child("soloPreneur").child(userId).child("productList")
+          .orderByChild("categoryId").equalTo(categoryId));
+      },
+
+      productDetail: function(userId, productId){
+        return $firebaseObject($firebaseRef.default.child("soloPreneur").child(userId).child("productList")
+                               .child(productId));
+      },
+
+      productDelete: function(userId, productId){
+        return $firebaseObject($firebaseRef.default.child("soloPreneur").child(userId).child("productList")
+                               .child(productId)).$remove();
+      },
+
     }
-      
+
   }
 })();

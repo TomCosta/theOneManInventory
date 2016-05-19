@@ -1,0 +1,74 @@
+<ion-view view-title="Create a new Product">
+  <ion-content class="padding has-header">
+
+    <form name="productCreateForm" novalidate=""
+      ng-submit="productCreate(productCreateForm)" class="list card no-margin">
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productCreateForm.name.$invalid && productCreateForm.$submitted,
+        'no-errors' : productCreateForm.name.$valid && productCreateForm.$submitted}">
+        <ion-label >Name <span class="required-mark">*</span></ion-label>
+        <input type="text" name="name" placeholder="What's this product's name?" ng-model="data.name" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productCreateForm.name.$error && productCreateForm.$submitted"
+        ng-messages="productCreateForm.name.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+      </div>
+
+      <ion-input class="item item-input item-stacked-label" >
+        <ion-label >Description</ion-label>
+        <textarea name="description" placeholder="What's this product's description?" ng-model="data.description">
+        </textarea>
+      </ion-input>
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productCreateForm.price.$invalid && productCreateForm.$submitted,
+        'no-errors' : productCreateForm.price.$valid && productCreateForm.$submitted}">
+        <ion-label >Price <span class="required-mark">*</span></ion-label>
+        <input type="number" name="price" placeholder="How much does it cost?" ng-model="data.price" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productCreateForm.price.$error && productCreateForm.$submitted"
+        ng-messages="productCreateForm.price.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+        <div class="error" ng-show="placeCreateForm.peopleCapacity.$invalid && !placeCreateForm.peopleCapacity.$pristine">
+          <i class="ion-information-circled"></i>
+          This has to be a number.
+        </div>
+      </div>
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productCreateForm.units.$invalid && productCreateForm.$submitted,
+        'no-errors' : productCreateForm.units.$valid && productCreateForm.$submitted}">
+        <ion-label >Units <span class="required-mark">*</span></ion-label>
+        <input type="number" name="units" placeholder="How many do you have?" ng-model="data.units" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productCreateForm.units.$error && productCreateForm.$submitted"
+        ng-messages="productCreateForm.units.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+        <div class="error" ng-show="placeCreateForm.peopleCapacity.$invalid && !placeCreateForm.peopleCapacity.$pristine">
+          <i class="ion-information-circled"></i>
+          This has to be a number.
+        </div>
+      </div>
+
+      <ion-input class="item-input padding">
+        <input type="submit" class="button button-positive" value="Create Product"
+          ng-disabled="productCreateForm.$invalid && productCreateForm.$submitted">
+      </ion-input>
+
+    </form>
+
+  </ion-content>
+</ion-view>

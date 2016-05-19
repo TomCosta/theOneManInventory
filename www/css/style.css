@@ -1,4 +1,8 @@
 /* Empty. Add your own CSS if you like */
+a {
+	text-decoration: none !important;
+}
+
 .center-text {
 	text-align: center;
 }
@@ -42,6 +46,14 @@
 
 .margin-top {
   margin-top: 5px !important;
+}
+
+.margin-top-medium {
+  margin-top: 20px !important;
+}
+
+.margin-top-super {
+  margin-top: 80px !important;
 }
 
 .margin-bottom {
@@ -107,4 +119,8 @@ label.item.has-error {
 
 .required-mark {
   color: red;
+}
+
+a.item-content {
+	padding: 0 !important;
 }

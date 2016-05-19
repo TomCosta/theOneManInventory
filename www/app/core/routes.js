@@ -90,6 +90,45 @@
               }
             })
 
+            .state('categoryDetail', {
+              url: '/categoryDetail/:cId',
+              templateUrl: 'app/product/categories/categoryDetail.html',
+              controller: 'CategoryDetailCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
+            .state('productCreate', {
+              url: '/productCreate/:cId/:categoryName',
+              templateUrl: 'app/product/products/productCreate.html',
+              controller: 'ProductCreateCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
+            .state('productDetail', {
+              url: '/productDetail/:pId',
+              templateUrl: 'app/product/products/productDetail.html',
+              controller: 'ProductDetailCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
 
 
 
