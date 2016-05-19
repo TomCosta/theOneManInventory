@@ -8,9 +8,9 @@
   ProductUpdateCtrl.$inject = ['$scope', '$state', 'user', 'ProductService', '$ionicHistory'];
 
   function ProductUpdateCtrl($scope, $state, user, ProductService, $ionicHistory){
-    var product = $state.params.pId;
+    var productId = $state.params.pId;
 
-    $scope.currentProduct = ProductService.productDetail(user.teamId, productId);
+    $scope.currentProduct = ProductService.productDetail(user.$id, productId);
 
     $scope.productUpdate = function(productUpdateForm){
       if (productUpdateForm.$valid) {

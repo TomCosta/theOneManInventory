@@ -1,0 +1,56 @@
+<ion-view>
+  <ion-nav-title>Update {{currentProduct.name}}</ion-nav-title>
+  <ion-content class="padding has-header">
+
+    <form name="productUpdateForm" novalidate=""
+      ng-submit="productUpdate(productUpdateForm)" class="list card no-margin">
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productUpdateForm.name.$invalid && productUpdateForm.$submitted,
+        'no-errors' : productUpdateForm.name.$valid && productUpdateForm.$submitted}">
+        <ion-label >Name <span class="required-mark">*</span></ion-label>
+        <input type="text" name="name" placeholder="What's this product's name?" ng-model="currentProduct.name" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productUpdateForm.name.$error && productUpdateForm.$submitted"
+        ng-messages="productUpdateForm.name.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+      </div>
+
+      <ion-input class="item item-input item-stacked-label" >
+        <ion-label >Description</ion-label>
+        <textarea name="description" placeholder="What's this product's description?" ng-model="currentProduct.description">
+        </textarea>
+      </ion-input>
+
+      <ion-input class="item item-input item-stacked-label"
+        ng-class="{ 'has-errors' : productUpdateForm.price.$invalid && productUpdateForm.$submitted,
+        'no-errors' : productUpdateForm.price.$valid && productUpdateForm.$submitted}">
+        <ion-label >Price <span class="required-mark">*</span></ion-label>
+        <input type="number" name="price" placeholder="How much does it cost?" ng-model="currentProduct.price" required>
+      </ion-input>
+
+      <div class="error-container" ng-show="productUpdateForm.price.$error && productUpdateForm.$submitted"
+        ng-messages="productUpdateForm.price.$error">
+        <div class="error" ng-message="required">
+          <i class="ion-information-circled"></i>
+          This field is required.
+        </div>
+        <div class="error" ng-show="placeCreateForm.peopleCapacity.$invalid && !placeCreateForm.peopleCapacity.$pristine">
+          <i class="ion-information-circled"></i>
+          This has to be a number.
+        </div>
+      </div>
+
+      <ion-input class="item-input padding">
+        <input type="submit" class="button button-positive" value="Create Product"
+          ng-disabled="productUpdateForm.$invalid && productUpdateForm.$submitted">
+      </ion-input>
+
+    </form>
+
+  </ion-content>
+</ion-view>

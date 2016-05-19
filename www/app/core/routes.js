@@ -142,6 +142,19 @@
               }
             })
 
+            .state('productUpdate', {
+              url: '/productUpdate/:pId',
+              templateUrl: 'app/product/products/productUpdate.html',
+              controller: 'ProductUpdateCtrl',
+              resolve: {
+                user: function($firebaseAuthService, $firebaseRef, $firebaseObject) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
+                  })
+                }
+              }
+            })
+
 
 
 
