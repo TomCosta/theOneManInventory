@@ -42,7 +42,7 @@
                 email: newEmail,
                 signupDate: Firebase.ServerValue.TIMESTAMP
               });
-              $state.go('profile');
+              $state.go('categoryList');
             });
 				}).catch(function(error){
 						switch (error.code) {
@@ -67,7 +67,7 @@
 					"email": email,
 					"password": password
 				}).then (function(authData){
-					$state.go('profile');
+					$state.go('categoryList');
 				}).catch(function(error){
 					console.log(error);
 				});
