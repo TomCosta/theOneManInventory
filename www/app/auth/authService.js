@@ -43,7 +43,7 @@
                 signupDate: Firebase.ServerValue.TIMESTAMP
               });
               $state.go('profile');
-            });						
+            });
 				}).catch(function(error){
 						switch (error.code) {
 				      case "EMAIL_TAKEN":
@@ -126,7 +126,8 @@
 					newEmail: newEmail,
 					password: password
 				}).then(function(){
-						alert('Cambiaste tu correo!');
+						alert('You changed your email');
+						if (window.AdMob) AdMob.showInterstitial();
 						$state.go('profile');
 				}).catch(function(error){
 					console.log(error);

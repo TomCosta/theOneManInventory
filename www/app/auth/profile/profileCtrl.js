@@ -10,7 +10,7 @@
 	function ProfileCtrl($scope, user, AuthService, $state){
 		// Creating an empty object called data and binding it to the $scope.
     $scope.data = {};
-    if (window.AdMob) AdMob.showInterstitial();
+    
 
 		/**
 		 * This function will call our service and log the user out.
@@ -42,7 +42,7 @@
       if (changeEmailForm.$valid) {
         AuthService.changeEmail(user.email, $scope.data.newEmail, $scope.data.password);
         user.email = $scope.data.newEmail;
-        user.$save();          
+        user.$save();
 
       };
     };
