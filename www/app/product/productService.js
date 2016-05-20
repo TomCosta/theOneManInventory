@@ -16,6 +16,7 @@
           name: name,
           description: description
         }).then(function(){
+          if (window.AdMob) AdMob.showInterstitial();
           $ionicHistory.goBack();
         });
       },
@@ -31,7 +32,9 @@
 
       categoryDelete: function(userId, categoryId){
         return $firebaseObject($firebaseRef.default.child("soloPreneur").child(userId).child("categoryList")
-                               .child(categoryId)).$remove();
+                               .child(categoryId)).$remove().then(function(){
+                                 $ionicHistory.goBack();
+                               });
       },
 
       productCreate: function(userId, name, description, price, units, categoryId){
@@ -45,6 +48,7 @@
           units: units,
           categoryId: categoryId,
         }).then(function(){
+          if (window.AdMob) AdMob.showInterstitial();
           $ionicHistory.goBack();
         });
       },

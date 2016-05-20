@@ -1,6 +1,7 @@
 <ion-view>
   <ion-nav-title>{{currentProduct.name}}</ion-nav-title>
   <ion-nav-buttons side="secondary">
+    <button class="button button-icon ion-trash-b" ng-click="productDelete(currentProduct.$id)"></button>
     <a href="#/productUpdate/{{currentProduct.$id}}" class="button button-icon ion-edit"></a>
   </ion-nav-buttons>
   <ion-content class="padding has-header">
