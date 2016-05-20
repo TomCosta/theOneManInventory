@@ -1,6 +1,6 @@
 <ion-view view-title="Login" hide-back-button="true">
 	<ion-content class="has-header padding">
-		<img ng-src="http://placehold.it/300x150" class="full-image">
+		<img src="img/banner.png" class="full-image">
 
 		<form name="loginForm" novalidate="" ng-submit="loginEmail(loginForm)"
 			class="list card no-margin">
@@ -8,7 +8,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : loginForm.email.$invalid && loginForm.$submitted,
 				'no-errors' : loginForm.email.$valid && loginForm.$submitted}">
-				<ion-label >Email</ion-label>
+				<ion-label >Email <span class="required-mark">*</span></ion-label>
 				<input type="email" name="email" placeholder="Your email..." ng-model="data.email" required>
 			</ion-input>
 
@@ -27,7 +27,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : loginForm.password.$invalid && loginForm.$submitted,
 				'no-errors' : loginForm.password.$valid && loginForm.$submitted}">
-				<ion-label >Password</ion-label>
+				<ion-label >Password <span class="required-mark">*</span></ion-label>
 				<input type="password" name="password" placeholder="Your Password" ng-model="data.password" required>
 			</ion-input>
 
@@ -46,12 +46,12 @@
 
 		</form>
 
-		<a href="#/signup" class="button button-royal button-clear button-block">
+		<a href="#/signup" class="button button-positive button-clear button-block">
 			Or create an account
 		</a>
 
-		<a href="#/passwordResetForm" class="button button-royal button-clear button-block button-small">
-			I forgot my password :'(
+		<a href="#/passwordResetForm" class="button button-positive button-clear button-block button-small">
+			I forgot my password <i class="icon ion-sad-outline"></i>
 		</a>
 
 	</ion-content>

@@ -4,7 +4,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : signupForm.fullName.$invalid && signupForm.$submitted,
 				'no-errors' : signupForm.fullName.$valid && signupForm.$submitted}">
-				<ion-label >Name</ion-label>
+				<ion-label >Name <span class="required-mark">*</span></ion-label>
 				<input type="text" name="fullName" placeholder="Your full name" ng-model="data.fullName" required>
 			</ion-input>
 
@@ -19,7 +19,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : signupForm.email.$invalid && signupForm.$submitted,
 				'no-errors' : signupForm.email.$valid && signupForm.$submitted}">
-				<ion-label >Email</ion-label>
+				<ion-label >Email <span class="required-mark">*</span></ion-label>
 				<input type="email" name="email" placeholder="Your email..." ng-model="data.email" required>
 			</ion-input>
 
@@ -38,7 +38,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : signupForm.password.$invalid && signupForm.$submitted, '
 				no-errors' : signupForm.password.$valid && signupForm.$submitted}">
-				<ion-label >Password</ion-label>
+				<ion-label >Password <span class="required-mark">*</span></ion-label>
 				<input type="password" name="password" placeholder="Your password (Don't tell anyone!)"
 					ng-model="data.password" required>
 			</ion-input>

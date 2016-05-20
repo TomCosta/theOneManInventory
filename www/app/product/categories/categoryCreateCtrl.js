@@ -9,7 +9,8 @@
 
   function CategoryCreateCtrl($scope, user, ProductService, $state, $ionicHistory){
     $scope.data = {};
-    
+    $scope.data.description = null;
+
 
 
     $scope.categoryCreate = function(categoryCreateForm){

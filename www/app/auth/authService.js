@@ -89,7 +89,8 @@
 				authUser.$resetPassword({
 					email: resetEmail
 				}).then(function(){
-					console.log('Password Reset Email was sent successfully');
+					alert("Just sent you an email!");
+					$state.go('login');
 				}).catch(function(error){
 					console.log(error);
 				});

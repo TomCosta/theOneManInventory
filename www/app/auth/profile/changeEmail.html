@@ -7,7 +7,7 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : changeEmailForm.newEmail.$invalid && changeEmailForm.$submitted,
         'no-errors' : changeEmailForm.newEmail.$valid && changeEmailForm.$submitted}">
-				<ion-label >New Email</ion-label>
+				<ion-label >New Email <span class="required-mark">*</span></ion-label>
 				<input type="email" name="newEmail" placeholder="Your new email"
           ng-model="data.newEmail" required />
 			</ion-input>
@@ -24,8 +24,8 @@
 			<ion-input class="item item-input item-stacked-label"
 				ng-class="{ 'has-errors' : changeEmailForm.password.$invalid && changeEmailForm.$submitted,
           'no-errors' : changeEmailForm.password.$valid && changeEmailForm.$submitted}">
-				<ion-label >Your Password</ion-label>
-				<input type="password" name="password" placeholder="Your password"
+				<ion-label >Your Password <span class="required-mark">*</span></ion-label>
+				<input type="password" name="password" placeholder="To make sure it's really you!"
           ng-model="data.password" required />
 			</ion-input>
 
