@@ -86,7 +86,14 @@
                   return $firebaseAuthService.$requireAuth().then(function(authData){
                     return $firebaseObject($firebaseRef.default.child('userProfile').child(authData.uid)).$loaded();
                   })
-                }
+                },
+                categoryList: function($firebaseAuthService, $firebaseRef, $firebaseArray) {
+                  return $firebaseAuthService.$requireAuth().then(function(authData){
+                    return $firebaseArray($firebaseRef.default.child('soloPreneur').child(authData.uid)
+                      .child('categoryList')).$loaded();
+                  })
+                },
+
               }
             })
 

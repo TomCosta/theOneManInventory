@@ -5,12 +5,12 @@
       .module('app.product')
       .controller('CategoryListCtrl', CategoryListCtrl);
 
-  CategoryListCtrl.$inject = ['$scope', 'user', 'ProductService', '$state'];
+  CategoryListCtrl.$inject = ['$scope', 'user', 'categoryList', '$state'];
 
-  function CategoryListCtrl($scope, user, ProductService, $state){
+  function CategoryListCtrl($scope, user, categoryList, $state){
 
-    $scope.categoryList = ProductService.categoryList(user.$id);
-    
+    $scope.categoryList = categoryList;
+
 
   };
 })();
